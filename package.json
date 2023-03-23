@@ -1,0 +1,23 @@
+{
+  "name": "gud-robit",
+  "version": "0.0.1",
+  "description": "trying robotjs",
+  "main": "gitit.js",
+  "dependencies": {
+    "robotjs": "^0.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node gitit.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshvito/gud-robit.git"
+  },
+  "author": "jv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshvito/gud-robit/issues"
+  },
+  "homepage": "https://github.com/joshvito/gud-robit#readme"
+}
