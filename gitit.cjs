@@ -13,4 +13,4 @@ const goRight = (/** @type {number} */ _t) => {
     }, _t);
 }
 
-goRight(randomInteger(50009, 60003));
+goRight(randomInteger(80009, 120003));

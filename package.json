@@ -4,9 +4,10 @@
   "description": "trying robotjs",
   "main": "gitit.js",
   "dependencies": {
+    "open": "^10.1.0",
     "robotjs": "^0.6.0"
   },
-  "devDependencies": {},
+  "type": "module",
   "scripts": {
     "start": "node gitit.js"
   },
