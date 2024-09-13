@@ -10,7 +10,7 @@
   },
   "type": "module",
   "scripts": {
-    "start:idlebot": "node gitit.js",
+    "start:idlebot": "node gitit.cjs",
     "start:timecarderator": "node ./timecarderator/index.js"
   },
   "repository": {
