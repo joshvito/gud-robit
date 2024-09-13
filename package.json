@@ -4,12 +4,14 @@
   "description": "trying robotjs",
   "main": "gitit.js",
   "dependencies": {
+    "moment": "^2.30.1",
     "open": "^10.1.0",
     "robotjs": "^0.6.0"
   },
   "type": "module",
   "scripts": {
-    "start": "node gitit.js"
+    "start:idlebot": "node gitit.js",
+    "start:timecarderator": "node ./timecarderator/index.js"
   },
   "repository": {
     "type": "git",
