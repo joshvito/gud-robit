@@ -1,3 +1,4 @@
+import moment from 'moment';
 import robotjs from 'robotjs';
 
 export function monitorMousePosition(
@@ -13,7 +14,7 @@ export function monitorMousePosition(
             && lastLoggedMousePos.x !== currentMousePos.x
             && lastLoggedMousePos.y !== currentMousePos.y
         ) {
-            console.info(`Mouse has not moved for ${delay/2000} seconds. Position - X: ${currentMousePos.x}, Y: ${currentMousePos.y}`);
+            console.info(`[${moment().toISOString()}] Mouse has not moved for ${delay/2000} seconds. Position - X: ${currentMousePos.x}, Y: ${currentMousePos.y}`);
             lastLoggedMousePos = currentMousePos;
         }
         lastMousePos = currentMousePos;
@@ -28,9 +29,9 @@ export function monitorMousePosition(
 };
 
 export function logAction(
-    /** @type {{type: string, action: string, x?: number, y?: number, value?: string}} */ action,
+    /** @type {{type: string, action: string, x?: number, y?: number, value?: string, description?: string}} */ action,
     /** @type {boolean} */ debug) {
     if (debug) {
-        console.info(`Action: ${action.type + action.action}, Value: ${action.value}, X: ${action.x}, Y: ${action.y}`);
+        console.info(`[${moment().toISOString()}] Action: ${action.type + action.action}, Value: ${action.value}, X: ${action.x}, Y: ${action.y}, Description: ${action.description}`);
     }
 }

@@ -6,7 +6,7 @@ import moment from 'moment';
  * @param {*} endDate use the format MMDDYYYY
  * x,y, coordinates are based on a W: 3840, H: 1600 screen
  */
-export function selectTimeframeRecipe(startDate = _defaultStart(), endDate = _defaultEnd()) {
+export function selectTimeframeRecipe(startDate = _defaultStart().format('MMDDYYYY'), endDate = _defaultEnd()) {
     const actions = [
         {type: 'mouse', action: 'move', x: 3507, y: 178},
         {type: 'mouse', action: 'click'},
@@ -27,7 +27,7 @@ export function selectTimeframeRecipe(startDate = _defaultStart(), endDate = _de
     };
 }
 
-const _defaultStart = () => {
+export const _defaultStart = () => {
     // get last month
     const lastMonth = moment().subtract(1, 'months');
     // get the last day of the month
@@ -46,7 +46,7 @@ const _defaultStart = () => {
         default:
             break
     }   
-    return lastDay.format('MMDDYYYY');
+    return lastDay;
 }
 
 const _defaultEnd = () => {

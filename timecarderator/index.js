@@ -4,11 +4,11 @@ import { runRecipe } from './run-recipe.js';
 import { monitorMousePosition } from './utility-monitor.js';
 import { openTimecardRecipe } from './recipe-open-timecard.js';
 import { selectTimeframeRecipe } from './recipe-select-time.js';
-import { goToBeginningOfTimeframe } from './recipe-payperiods.js';
-
+import { goToBeginningRecipe } from './recipe-payperiods.js';
+import { inputTimeRecipe } from './recipe-input-time.js';
 const __default_mouse_delay = 768;
 const __default_keyboard_delay = 768;
-const __debug_mode = false;
+const __debug_mode = true;
 
 const openUrlSnapRight = async (/** @type {string} */ url, debug = false) => {
     await open(url, {wait: true});
@@ -27,7 +27,8 @@ const openUrlSnapRight = async (/** @type {string} */ url, debug = false) => {
 let recipe = [
     ...openTimecardRecipe().actions,
     ...selectTimeframeRecipe().actions,
-    ...goToBeginningOfTimeframe().actions
+    ...goToBeginningRecipe().actions,
+    ...inputTimeRecipe().actions,
 ];
 
 await openUrlSnapRight('https://e23.ultipro.com/default.aspx', __debug_mode);
